@@ -1,0 +1,31 @@
+
+.space{
+margin-left: 100px;
+
+}
+
+
+.watch{
+  color: blue;
+}
+
+.red{
+  color: red;
+}
+
+.green{
+color: green; 
+}
+
+.watchimg{
+  width: 150px;
+}
+
+.addedlist{
+  float: right;
+  margin: 20px;
+}
+
+.card{
+  width: 18rem;
+}
