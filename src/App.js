@@ -1,31 +1,19 @@
 
-  import { useState, useEffect } from "react";
+import React from 'react'
+import Hook from './home-work/hook';
+
 
 function App() {
  
-const[count,setCount] = useState(1);
-const[calculation,setCalculation] = useState(0);
 
-
-useEffect(()=>{
-  setCalculation(() => count*2)
-},[count])
-
-
-
-  return (
+ return (
 
 <>
-<p>count:{count}</p>
-<button onClick={() => setCount((c) => c + 1) }>+</button>
-<p>calculation:{calculation}</p>
+<Hook/>
+
 </>
-
-
 
   );
 }
-
-
 
 export default App;
