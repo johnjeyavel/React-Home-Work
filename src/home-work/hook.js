@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 function Hook(){
-// const[state,setstate]=useState();
+
 
 const [counter,setCounter]=useState("")
 const [todo,setTodo]= useState([])
