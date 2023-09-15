@@ -1,7 +1,8 @@
+
 import React,{Component} from "react";
 import "./newTable.css"
 
-class Table extends React.Component{
+class TodoRouter extends React.Component{
 
 constructor(props){
     super(props);
@@ -76,14 +77,14 @@ const{changedValue,changeValue,editedValue}=this.state;
            <h1 class="text-center " >Add Todo</h1><br/><br/>
     <input type="text" value={changeValue} onChange={this.clickChange} class=" shadow-lg p-2 mb-5 bg-body rounded col-5 border border-4 mx-5"/>    
 
-    <button onClick={this.addListItem} class="shadow-lg p-2 mb-5  rounded col-1 btn-primary fw-bold">Add</button>
+    <button onClick={this.addListItem} class="shadow-lg p-2 mb-5  rounded col-1 btn-primary fw-bold">Add</button><hr/>
         
       <ul>
         {changedValue.map((itemvalue,itemindex)=>(
             <li key={itemindex} > 
             {this.state.editValue === itemindex?(<>
             <input type="text" value={editedValue} onChange={(e)=>this.setState({editedValue:e.target.value})} class="  span1  mx-5"/>
-            <button onClick={()=>this.editSaveNow(itemindex)} class=" rounded col-1 btn-primary fw-bold mx-5">save</button>
+            <button onClick={()=>this.editSaveNow(itemindex)} class=" rounded col-1 btn-primary fw-bold mx-5">save</button><hr/>
             </>):
        (<>
        <span > {itemvalue}</span>        
@@ -101,4 +102,4 @@ const{changedValue,changeValue,editedValue}=this.state;
     )
 }
 }
-export default Table;
+export default TodoRouter;

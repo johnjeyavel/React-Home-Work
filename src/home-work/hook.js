@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./newtable"
+
 
 function Hook(){
 // const[state,setstate]=useState();

@@ -1,26 +1,25 @@
 import React from "react";
 
 
-function Array(props){
+function Array1(props){
 
-    // const Arr =[ 'red', 'bule', 'block', 'white']
-
-const       
+    const Arr =[ 'red', 'bule', 'block', 'white']
+     
 
 
 
 return(
     <>
     
-{/* <ul>
+<ul>
     {Arr.map((item, index) =>(
         <li key={index}>{item} </li>
     ))}
- </ul> */}
+ </ul> 
 
 
     </>
 )
 
 }
-export default Array;
+export default Array1;
