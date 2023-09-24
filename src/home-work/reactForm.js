@@ -1,81 +1,130 @@
 
 import React, { useState } from 'react'
+import Modal from 'react-modal';
+import "./FormReact.css"
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor:"gray",
+    color:"white",
+    borderRadious:"10px", 
+  },
+};
+
 
 function Form1() {
+  let subtitle;
+
 const[data,setData]=useState("")  
 const[pass,setPass]=useState("")
-const[textarea,setTextarea]=useState("")  
+const[textarea,setTextarea]=useState("")    
 const[dataVal,setDataVal]=useState([])  
 const[passVal,setPassVal]=useState([])
 const[textareaVal,setTextareaVal]=useState([])
-const Arr=[data,pass,textarea]
-const ArrVal=[dataVal,passVal,textareaVal]
+
+const [modalIsOpen, setIsOpen] = React.useState(false);
 
 
-const handleChange=(e)=>{  
-setData(e.target.value);
-
+function openModal() {
+  setIsOpen(true);
 }
 
-const handleChange1=(e)=>{
-setPass(e.target.value);
-
+function afterOpenModal() {
+  subtitle.style.color = 'white';
 }
 
-const handleChange2=(e)=>{
-  setTextarea(e.target.value);
-
-  }
-
-const handleclick=()=>{
-// alert("dataValue => "+data+"  +<br/>+"+"passwordValue => "+pass+"  ;  "+"textareaValue => "+textarea);
-if(Arr !== ""){
+function closeModal(e) {
+  setIsOpen(false);
+  
+  e.preventDefault();
   setDataVal([...dataVal,data]);
 setData("");
 setPassVal([...passVal,pass]);
 setPass("");
 setTextareaVal([...textareaVal,textarea]);
-setTextarea("");  
+setTextarea("");
 }
-}
+
+
+// const handleclick=(e)=>{
+
+//   e.preventDefault();
+//   setDataVal([...dataVal,data]);
+// setData("");
+// setPassVal([...passVal,pass]);
+// setPass("");
+// setTextareaVal([...textareaVal,textarea]);
+// setTextarea("");
+// }
 
 
   return (
    <>
+<div class="formmedia">
 
+         <button ref={(_subtitle) => (subtitle = _subtitle)} onClick={openModal} class="openmodal btn-primary ">Add</button>  
+       
+        <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
 
-<input type='text' placeholder='enter your text' onChange={handleChange}/><br/><br/>
- <input type='password'  placeholder='enter your password' onChange={handleChange1}/><br/><br/> 
-<input type='textarea' placeholder='enter your textarea' onChange={handleChange2} /><br/><br/> 
+<form  class="d-flex justify-content-evenly my-5  ">
+<input type='text' placeholder='enter your name ' value={data} onChange={(e)=>setData(e.target.value)} class=" inputbox"/>
+ <input type='gmail'  placeholder='enter your gmail' value={pass} onChange={(e)=>setPass(e.target.value)} class=" inputbox"/>
+<input type='password' placeholder='enter your password' value={textarea}  onChange={(e)=>setTextarea(e.target.value)} class=" inputbox"/>
 
+{/* <input type='submit' class="btn-primary rounded" /> */}
+<button onClick={closeModal} class="btn-primary btnclose">close</button>
+</form>
 
-<input type='submit' onClick={handleclick}/>
+</Modal>
+<br/>
 
-{/* {ArrVal.map(()=>(
-
-
-
-))} */}
-
-<div class="table-responsive">
-  <table class="table table-primary">
-    <thead>
+<div class="table-responsive text-center mx-4 ">
+  <table class="table  table-bordered tablebtn ">
+    <thead class="table-dark">
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">password</th>
-        <th scope="col">Textaea</th>
+        <th scope="col">Gmail</th>
+        <th scope="col">Password</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-primary">
       <tr>
-        <td scope="row">{dataVal}</td>
-        <td>{passVal}</td>
-        <td>{textareaVal}</td>
-      </tr>
-    </tbody>
+        <td>{dataVal.map((item)=>(
+          <p>{item}</p>
+))}</td>
+
+
+        <td>{passVal.map((item1)=>(
+<p>{item1}</p>
+))}</td>
+      <td>{textareaVal.map((item2)=>(
+<p>{item2}</p>
+))}</td>
+      </tr> 
+    </tbody >
   </table>
+  
 </div>
 
+<a href='http://localhost:3000/TodoList'>
+<button  class="btn-danger Fpreviousbtn">previous</button></a>
+
+<a href='http://localhost:3000/Thirukkural'>
+<button  class="btn-success Fnextbtn">Next</button></a> 
+
+</div>
    </>
   )
 }

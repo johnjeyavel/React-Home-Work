@@ -1,4 +1,56 @@
+   
+   
 
+
+.counterhead{
+  text-shadow: 5px 5px 5px #555;
+  margin-top: 6%;
+}
+
+.pcounter{
+  text-shadow: 5px 5px 5px #555;
+  font-size: 24px;
+  padding: 25px;
+  color: blue;
+}
+      
+  .COpreviousbtn{
+    border-radius: 10px;
+    box-shadow: 2px 3px 4px 2px #555;
+    padding: 1% ;
+    font-weight: bolder;
+    margin-left:1%;
+    margin-top: 10px;
+    animation-name:COnextanimate;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    }
+    
+    @keyframes COnextanimate{
+    0% {
+        opacity:0;
+    transform: translateX(100px);
+    }
+    
+    20% {
+        opacity:1;
+    transform: translateX(-50px);
+    }
+    
+    }
+  
+    .COpreviousbtn:hover{
+      color:white;
+      font-weight:1000;
+      }
+
+     
+      .counter-shawdow{
+        box-shadow: 2px 3px 4px 2px #555;       
+    }
+
+
+/* 
 .space{
 margin-left: 100px;
 
@@ -28,4 +80,4 @@ color: green;
 
 .card{
   width: 18rem;
-}
+} */

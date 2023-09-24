@@ -1,10 +1,14 @@
 import React from 'react';
-import Hook from './home-work/hook';
+// import ORouter from './home-work/ORouter';
+// import TodoRouter from './home-work/TodoClass';
+import Router1 from './home-work/Router1';
+
+
+
 function App() {
   return (  
 <>  
-<Hook/>
-<h1>HI</h1>
+<Router1/>
 </> 
   );
 }
