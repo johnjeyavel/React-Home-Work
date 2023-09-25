@@ -28,6 +28,10 @@ const[dataVal,setDataVal]=useState([])
 const[passVal,setPassVal]=useState([])
 const[textareaVal,setTextareaVal]=useState([])
 
+const [edit,setEdit]=useState(-1)
+const [edited,setEdited]=useState("")
+
+
 const [modalIsOpen, setIsOpen] = React.useState(false);
 
 
