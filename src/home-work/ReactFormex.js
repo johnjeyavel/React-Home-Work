@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import Modal from 'react-modal';
+  import React, { useState } from 'react'
+  import Modal from 'react-modal';
 
 // const user = {id:null,name:"",age:"",gmail:"",genter:""}
 
@@ -90,83 +90,78 @@ const deleteNow = (index1) =>{
   return (
     <div>
 
-<button ref={(_subtitle) => (subtitle = _subtitle)} onClick={openModal} class="openmodal btn-primary ">Add</button>  
-       
-       <Modal
-       isOpen={modalIsOpen}
-       onAfterOpen={afterOpenModal}
-       onRequestClose={closeModal}
-       style={customStyles}
-       contentLabel="Example Modal"
-     >
+    <button ref={(_subtitle) => (subtitle = _subtitle)} onClick={openModal} class="openmodal btn-primary ">Add</button>  
+          
+          <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
 
-<form class="container my-5 text-center" onSubmit={closeModal}>
+    <form class="container my-5 text-center" onSubmit={closeModal}>
 
-<label for="id">Student ID</label>   <br/>
-<input type='number' placeholder='Enter student id' onChange={(e)=>setIdV(e.target.value)} required /><br/> <br/>
-<label for="text">Student NAME</label>   <br/>
-<input type='text' placeholder='Enter student name'  onChange={(e)=>setNameV(e.target.value)}  required/><br/> <br/>
-<label for="text">Enter Age</label>   <br/>
-<input type='number' placeholder='Enter student age'  onChange={(e)=>setAgeV(e.target.value)}  required/><br/> <br/>
-<label for="text">Enter Gmail</label>   <br/>
-<input type='gmail' placeholder='Enter student gmail'  onChange={(e)=>setGmailV(e.target.value)}  required/><br/> <br/>
+    <label for="id">Student ID</label>   <br/>
+    <input type='number' placeholder='Enter student id' onChange={(e)=>setIdV(e.target.value)} required /><br/> <br/>
+    <label for="text">Student NAME</label>   <br/>
+    <input type='text' placeholder='Enter student name'  onChange={(e)=>setNameV(e.target.value)}  required/><br/> <br/>
+    <label for="text">Enter Age</label>   <br/>
+    <input type='number' placeholder='Enter student age'  onChange={(e)=>setAgeV(e.target.value)}  required/><br/> <br/>
+    <label for="text">Enter Gmail</label>   <br/>
+    <input type='gmail' placeholder='Enter student gmail'  onChange={(e)=>setGmailV(e.target.value)}  required/><br/> <br/>
 
-<label for="text">Enter Gender</label> <br/>
-<input type='text' placeholder='Enter student Gender'  onChange={(e)=>setGenderV(e.target.value)}  required/><br/> <br/>
+    <label for="text">Enter Gender</label> <br/>
+    <input type='text' placeholder='Enter student Gender'  onChange={(e)=>setGenderV(e.target.value)}  required/><br/> <br/>
 
-<input type='submit'/>
+    <input type='submit'/>
 
-</form>
+    </form>
 
-</Modal>
-
-
-
-{/* Table start ......*/}
-
- <div class="table-responsive">
-  <table class="table table-primary">
-    <thead>
-      <tr>
-        <th scope="col">Student ID</th>
-        <th scope="col">Student NAME</th>
-        <th scope="col">Student Age</th>
-        <th scope="col">Student Gmail</th>
-        <th scope="col">Gender</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-
-        <td>{idV1.map((item)=>(
-          <p>{item}</p>
-))}</td>
-        <td>{nameV1.map((item1)=>(
-          <p>{item1}</p>
-))}</td>
-        <td>{ageV1.map((item2)=>(
-          <p>{item2}</p>
-))}</td>
-        <td>{gmailV1.map((item3)=>(
-          <p>{item3}</p>
-))}</td>
-              <td>{genderV1.map((item4,index1)=>(
-          <span key={index1}>{item4}
-          <button onClick={()=>deleteNow(index1)}>Delete</button>
-          </span>              
-))}        
-</td>
-
-      </tr>
-
-    </tbody>
-  </table>
-</div>
+    </Modal>
 
 
 
+    {/* Table start ......*/}
 
+    <div class="table-responsive">
+      <table class="table table-primary">
+        <thead>
+          <tr>
+            <th scope="col">Student ID</th>
+            <th scope="col">Student NAME</th>
+            <th scope="col">Student Age</th>
+            <th scope="col">Student Gmail</th>
+            <th scope="col">Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
 
+            <td>{idV1.map((item)=>(
+              <p>{item}</p>
+    ))}</td>
+            <td>{nameV1.map((item1)=>(
+              <p>{item1}</p>
+    ))}</td>
+            <td>{ageV1.map((item2)=>(
+              <p>{item2}</p>
+    ))}</td>
+            <td>{gmailV1.map((item3)=>(
+              <p>{item3}</p>
+    ))}</td>
+                  <td>{genderV1.map((item4,index1)=>(
+              <span key={index1}>{item4}
+              <button onClick={()=>deleteNow(index1)}>Delete</button>
+              </span>              
+    ))}        
+    </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
 
 
     </div>

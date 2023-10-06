@@ -1,10 +1,12 @@
 import React from 'react'
-import Home1 from './home-work/Home1'
+import CRUDRouter from './home-work/CRUDRouter'
+// import Router1 from './home-work/Router1'
 
 const App = () => {
   return (
     <div>
-      <Home1/>
+     <CRUDRouter/>
+
     </div>
   )
 }
